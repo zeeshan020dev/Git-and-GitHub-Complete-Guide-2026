@@ -89,19 +89,17 @@ Git is often used with **GitHub**, which gives you a place to store repositories
 <tr>
 <td width="50%">
 
-### 01
-### 📜 Keep a Complete History
+### 01 📜 Keep a Complete History
 
-Track every change made to your project over time.
+A clear history of changes made to your project over time
 
 </td>
 
 <td width="50%">
 
-### 02
-### 💾 Create Reliable Backups
+### 02 💾 Create Reliable Backups
 
-Save snapshots of your work that you can restore anytime.
+Safe backup points for your work that you can return to anytime.
 
 </td>
 </tr>
@@ -109,19 +107,17 @@ Save snapshots of your work that you can restore anytime.
 <tr>
 <td>
 
-### 03
-### 🤝 Collaborate with Teams
+### 03 🤝 Collaborate with Teams
 
-Work with multiple developers on the same project seamlessly.
+Easier teamwork when multiple people work on the same project.
 
 </td>
 
 <td>
 
-### 04
-### 🔄 Undo Mistakes Safely
+### 04 🔄 Undo Mistakes Safely
 
-Revert unwanted changes without losing important work.
+The ability to undo mistakes without losing important edits.
 
 </td>
 </tr>
