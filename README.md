@@ -72,6 +72,17 @@ to earlier versions, and work without losing important edits.
 Think of Git as a timeline for your project. Each saved point is called a commit. You can review
 changes, compare versions, and undo mistakes when needed.
 
+## 📌 A Commit Timeline
+
+```mermaid
+flowchart LR
+    A["🔴 A<br/>Commit 1"] --> B["🟠 B<br/>Commit 2"] --> C["🟢 C<br/>Commit 3"]
+```
+
+> In the above diagram, each letter is one commit. New commits extend the line to the right.
+
+Git is often used with **GitHub**, which gives you a place to store repositories online, share code, and collaborate with others.
+
 **Visualizing a simple Git workflow:**
 
 ```
