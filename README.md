@@ -90,9 +90,10 @@ Git is distributed by design — this is exactly why it became the industry stan
 
 ## 4. Git vs GitHub
 
-**What is Git?** Git is the version control *tool* itself — free software installed on your computer that tracks changes to your files, creates commits, and manages branches, all locally.
+*Git* is the version control tool that runs on your computer. It tracks changes, creates commits, and manages branches.
 
-**What is GitHub?** GitHub is a *website* that hosts your Git repositories online, so your code is backed up in the cloud and can be shared with others. It adds collaboration features on top of Git, like pull requests, issues, and code review.
+*GitHub* is a website that hosts Git repositories online. It adds collaboration features like pull requests,
+issues, and code review.
 
 They are **not** the same thing — Git is the engine, GitHub is one of several places you can park it.
 
