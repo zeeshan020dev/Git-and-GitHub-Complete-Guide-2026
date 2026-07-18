@@ -53,7 +53,7 @@ Whether you're a student, a self-taught developer, or someone brushing up before
 
 ## 2. What is Git?
 
-In simple words: **Git is a tool that saves a snapshot of your project every time you tell it to**, so you always have a history to look back on. Each saved snapshot is called a **commit**, and together they form a timeline of your entire project.
+**Git is a tool that saves a snapshot of your project every time you tell it to**, so you always have a history to look back on. Each saved snapshot is called a **commit**, and together they form a timeline of your entire project.
 
 If you ever break something or want to see how your code looked yesterday, Git lets you jump right back to that point — nothing is ever truly lost.
 
