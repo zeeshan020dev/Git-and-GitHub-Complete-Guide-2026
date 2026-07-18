@@ -83,21 +83,56 @@ flowchart LR
 
 Git is often used with **GitHub**, which gives you a place to store repositories online, share code, and collaborate with others.
 
+## 🚀 Use Git When You Want
+
+<table>
+<tr>
+<td width="50%">
+
+### 01
+### 📜 Keep a Complete History
+
+Track every change made to your project over time.
+
+</td>
+
+<td width="50%">
+
+### 02
+### 💾 Create Reliable Backups
+
+Save snapshots of your work that you can restore anytime.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 03
+### 🤝 Collaborate with Teams
+
+Work with multiple developers on the same project seamlessly.
+
+</td>
+
+<td>
+
+### 04
+### 🔄 Undo Mistakes Safely
+
+Revert unwanted changes without losing important work.
+
+</td>
+</tr>
+</table>
+
 **Visualizing a simple Git workflow:**
 
 ```
  ✏️ Edit files  →  📋 Stage changes  →  💾 Commit  →  ☁️ Push to GitHub
    (working dir)      (git add)         (git commit)      (git push)
 ```
-
-| Use Git when you want... |
-|---|
-| 📜 A clear history of changes over time |
-| 💾 Safe backup points you can return to |
-| 🤝 Easier teamwork on the same project |
-| ↩️ To undo mistakes without losing edits |
-
-**Simple workflow:** Edit your files → Save the changes → Commit them → Push to GitHub.
 
 ---
 
