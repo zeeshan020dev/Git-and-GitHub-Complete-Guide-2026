@@ -146,7 +146,7 @@ flowchart LR
 
 ## 3. Understanding Version Control Systems
 
-Version Control Systems (VCS) help you **track changes** to your files over time. Instead of creating multiple copies like `project-final-v2-latest.zip`, a VCS keeps a complete history of your project.
+Version control systems (VCS) track file changes over time. They let you save snapshots, compare versions, and collaborate without overwriting each other's work.
 
 With version control, you can:
 
@@ -159,48 +159,31 @@ With version control, you can:
 
 ## 🏛️ Centralized Version Control System (CVCS)
 
-In a **Centralized Version Control System**, there is **one central server** that stores the official version of the project.
-
-Developers:
-1. Connect to the central server.
-2. Download (check out) the project.
-3. Make changes.
-4. Upload (check in) their changes back to the server.
+In a centralized model, one server holds the official copy of the project. Developers check out files, make changes, and check them back in.
 
 ### Examples
 
 - SVN (Subversion)
 - CVS (Concurrent Versions System)
 
-### ⚠️ Drawbacks
+### Downside
 
-- ❌ Requires access to the central server.
-- ❌ If the server goes down, collaboration stops.
-- ❌ The server becomes a **single point of failure**.
+- If the central server goes down, collaboration stops
 
 ---
 
 ## 🌐 Distributed Version Control System (DVCS)
 
-In a **Distributed Version Control System**, every developer has a **complete copy of the repository**, including its entire history.
-
-Instead of relying on a central server, developers can:
-
-1. Clone the repository.
-2. Commit changes locally.
-3. Sync with a remote repository whenever they're ready.
+In a distributed model, every developer has a full copy of the project history on their machine. You commit locally first, then sync with a remote when ready.
 
 ### Examples
 
 - Git
 - Mercurial
 
-### ✅ Benefits
+### ✅ Benefit
 
-- 💻 Work completely offline.
-- ⚡ Faster operations.
-- 🔒 Every developer has a backup of the project history.
-- 🌿 Supports powerful workflows like branching and merging.
+- You can work offline and still have a full history.
 
 ---
 
@@ -229,8 +212,6 @@ Instead of relying on a central server, developers can:
           ▼        ▼        ▼
       👨‍💻 Dev A 👩‍💻 Dev B 👨‍💻 Dev C
 
-• One central repository
-• Server failure affects everyone
 ```
 
 ```text
@@ -250,9 +231,7 @@ Instead of relying on a central server, developers can:
 
 # 🚀 Why Git Uses a Distributed Model
 
-Git was created by **Linus Torvalds** in **2005** to manage the development of the **Linux Kernel**, one of the world's largest open-source projects.
-
-A distributed architecture allows Git to provide:
+Git was created by **Linus Torvalds** in **2005** for large teams working on the **Linux Kernel**. A distributed model means:
 
 - ⚡ Faster performance
 - 💾 Reliable backups
@@ -265,19 +244,9 @@ A distributed architecture allows Git to provide:
 
 ## 📝 In Short
 
-> 🏛️ **Centralized VCS**
->
-> - One central server stores the project.
-> - Requires server access.
-> - Single point of failure.
-
-> 🌐 **Distributed VCS**
->
-> - Every developer has the complete repository.
-> - Works offline.
-> - Multiple backups exist automatically.
-
-> ⭐ **Git is a Distributed Version Control System (DVCS)** designed for speed, reliability, and collaboration.
+- Centralized VCS relies on one server.
+- Distributed VCS gives everyone a full copy.
+- Git is distributed by design.
 
 ---
 
