@@ -123,11 +123,23 @@ The ability to undo mistakes without losing important edits.
 </tr>
 </table>
 
-**Visualizing a simple Git workflow:**
+## 🔄 Visualizing a Simple Git Workflow
 
-```
- ✏️ Edit files  →  📋 Stage changes  →  💾 Commit  →  ☁️ Push to GitHub
-   (working dir)      (git add)         (git commit)      (git push)
+| Step | Action | Git Command |
+|:---:|:--------|:-----------|
+| ✏️ | **Edit Files** | Working Directory |
+| ⬇️ | **Stage Changes** | `git add` |
+| 💾 | **Create Commit** | `git commit` |
+| ☁️ | **Push to GitHub** | `git push` |
+| 🌍 | **Repository Updated** | GitHub |
+
+```mermaid
+flowchart LR
+    A["✏️ Edit Files<br/><sub>Working Directory</sub>"]
+    --> B["📋 Stage Changes<br/><code>git add</code>"]
+    --> C["💾 Commit Changes<br/><code>git commit</code>"]
+    --> D["☁️ Push to GitHub<br/><code>git push</code>"]
+    --> E["🌍 GitHub Repository"]
 ```
 
 ---
