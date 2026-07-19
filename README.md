@@ -437,15 +437,6 @@ Once Git is installed, you can use it in different ways depending on your prefer
 
 ---
 
-## 📝 In Short
-
-- 📥 Download Git from the official website or install it using your operating system's package manager.
-- ✅ Verify the installation using `git --version`.
-- 💻 The **Command Line** provides the most control and is recommended for learning Git.
-- 📝 **VS Code** and 🖥️ **GitHub Desktop** offer user-friendly interfaces while using the same Git commands underneath.
-
----
-
 ## 6. How Git Works
 
 Git moves your changes through **four areas** before they reach GitHub:
