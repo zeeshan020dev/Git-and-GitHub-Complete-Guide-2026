@@ -441,16 +441,46 @@ Once Git is installed, you can use it in different ways depending on your prefer
 
 Git moves your changes through **four areas** before they reach GitHub:
 
-```
-📁 Working Dir  ──git add──►  📋 Staging Area  ──git commit──►  💾 Local Repo  ──git push──►  ☁️ Remote Repo
+---
+
+## The Four Areas of Git
+
+| 📁 | 📋 | 💾 | ☁️ |
+|:--:|:--:|:--:|:--:|
+| **WORKING DIR** | **STAGING AREA** | **LOCAL REPO** | **REMOTE REPO** |
+| Your files on disk | Changes queued for commit | Commits saved locally | GitHub / cloud host |
+
+---
+
+| **01) Working Directory**<br><br>Your project files on disk. Edit freely here. Git sees changes but does not save them until you stage and commit. | **02) Staging Area**<br><br>A holding zone for changes you want in the next commit. Use `git add` to move files here. |
+|:---|:---|
+| **03) Local Repository**<br><br>Where commits are stored permanently on your machine. Use `git commit` to save a snapshot. | **04) Remote Repository**<br><br>The copy on GitHub (or another host). Use `git push` to upload and `git pull` to download. |
+
+# The Git Workflow
+
+A full cycle from editing to pushing looks like this:
+
+```bash
+# 1. Edit files in your working directory
+
+# 2. Stage changes
+git add .
+
+# 3. Commit to local repository
+git commit -m "describe your change"
+
+# 4. Push to remote repository
+git push origin main
 ```
 
-| Area | What it means |
-|---|---|
-| **Working Directory** | Your files on disk — edit freely here |
-| **Staging Area** | A holding zone for what you want in the next commit |
-| **Local Repository** | Where commits are saved permanently on your machine |
-| **Remote Repository** | The copy on GitHub |
+## Understanding Snapshots
+
+Each commit is a snapshot of your entire project at one moment. Git stores these efficiently so that you can jump back to any point in history.
+
+```bash
+# See all snapshots
+git log --oneline
+```
 
 ---
 
