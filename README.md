@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🚀 Git & GitHub Handbook
+# Git & GitHub Handbook
 ### The Complete Beginner's Guide — Master Version Control, Collaborate Better, Code with Confidence
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
