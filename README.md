@@ -1000,23 +1000,149 @@ git add logs/.gitkeep
 
 ## 11. Branches
 
-A branch = an independent line of development. `main` is the default branch.
+Branches let you work on new features, bug fixes, or experiments without touching your stable code.
 
-```
-A─B─C   main
-     \
-      D─E   feature/search
-```
+### What is a Branch?
+
+A branch is an independent line of development.
+
+In most repositories, `main` is the default branch.
+
+Branching at commit `B` lets you build a feature without changing `main`:
+
+```text
+A─B─C        main
+   \
+    D─E      feature/search
+````
+
+Each letter represents a commit.
+
+The lines show how commits are connected, and time flows from left to right.
+
+---
+
+### Why Branches Exist
+
+Branches are useful because:
+
+* They let you build features in isolation.
+* They help fix bugs without breaking stable or production code.
+* They let you experiment safely.
+* They allow multiple lines of development to exist at the same time.
+
+---
+
+### Creating a Branch
+
+Create a new branch with:
 
 ```bash
-git branch <branchname>      # create
-git branch                   # list (check current)
-git switch <branchname>      # move onto it
-git merge <branchname>       # merge INTO current branch
-git branch -d <branchname>   # delete after merging
+git branch feature/search         # git branch <branchname>
 ```
 
-> 🧠 **Stuck in Vim?** Press `Esc`, then type `:wq` and hit Enter to save & quit.
+This creates the branch, but it does not switch you to it.
+
+---
+
+### Switching Branches
+
+Using the traditional command:
+
+```bash
+git checkout feature/search
+```
+
+Modern alternative:
+
+```bash
+git switch feature/search
+```
+
+Both commands move you onto the selected branch.
+
+---
+
+### Creating and Switching Together
+
+You can create a branch and switch to it in one command.
+
+Traditional method:
+
+```bash
+git checkout -b feature/search
+```
+
+Modern alternative:
+
+```bash
+git switch -c feature/search
+```
+
+The `-c` option tells Git to create the branch before switching to it.
+
+---
+
+### Viewing Branches
+
+Show all local branches:
+
+```bash
+git branch
+```
+
+Example:
+
+```text
+* feature/search
+  main
+```
+
+The `*` symbol shows your current branch.
+
+Show local and remote branches:
+
+```bash
+git branch -a
+```
+
+Show only the name of your current branch:
+
+```bash
+git branch --show-current
+```
+
+Example:
+
+```text
+feature/search
+```
+
+---
+
+### Understanding the Git Graph
+
+You can visualize how branches split and merge with:
+
+```bash
+git log --oneline --graph --all
+```
+
+A typical branch history may look like:
+
+```text
+      D─E
+     /   \
+A─B─C─────M
+```
+
+Here:
+
+* `A`, `B`, and `C` are commits on the original line of development.
+* `D` and `E` represent work done on another branch.
+* `M` is a merge commit where the two lines of development come back together.
+
+This graph helps you understand how branches have changed and merged over time.
 
 ---
 
