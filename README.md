@@ -754,21 +754,89 @@ git log --oneline --graph --all
 
 ---
 
-## 8. Git Scenario 1: Single User Setup
+## 8. Your First Project with Git
 
-The simplest end-to-end loop for working solo:
+Let me walk you through a complete project from scratch.
+
+### Complete Walkthrough
+
+**1. Create a Simple Project**
 
 ```bash
+mkdir hello-git
+cd hello-git
 git init
-# ...edit files...
+echo "# Hello Git" > README.md
+````
+
+**2. Make Changes**
+
+```bash
+echo "print('hello')" > main.py
 git status
+```
+
+**3. Stage Files**
+
+```bash
+git add README.md
+git add main.py
+
+# or stage everything at once
 git add .
-git commit -m "Meaningful message"
-# repeat, then anytime:
+```
+
+**4. Create a Commit**
+
+```bash
+git commit -m "initial commit with readme and main script"
+```
+
+---
+
+### Viewing History
+
+```bash
 git log --oneline
 ```
 
-That's the entire cycle — **edit → stage → commit → review** — no branches or collaborators needed yet.
+---
+
+### Best Practices While Committing
+
+* Commit when a logical piece of work is done.
+* One idea per commit.
+* Use present tense messages: `add login form` not `added login form`.
+
+```bash
+# good commit flow
+git status
+git add .
+git commit -m "add user input validation"
+git log --oneline -3
+```
+
+---
+
+### The Full Workflow in One View
+
+Every project follows the same repeating loop: **edit → stage → commit → review**. Repeat this cycle for every logical change.
+
+**EDIT**
+
+Make your changes to files in the working directory. Git notices but does not save them yet.
+
+**STAGE**
+
+Use `git add` to move changes into the staging area, ready to be committed.
+
+**COMMIT**
+
+Use `git commit -m` to save a permanent snapshot with a clear message.
+
+**REVIEW**
+
+Use `git log --oneline` to inspect your commit history and confirm everything looks right.
 
 ---
 
