@@ -486,34 +486,271 @@ git log --oneline
 
 ## 7. Hands-on Git
 
-**Basic checks:**
+Git provides a simple set of commands for tracking changes, saving versions of your work, and reviewing your project history.
+
+### Basic Git Checks
+
+Before working with Git, you can verify that Git is installed and check the current state of your repository.
+
 ```bash
+# check installed Git version
 git --version
-git init          # start tracking a folder
-git status        # see what's changed
+
+# initialize Git in the current folder
+git init
+
+# check the current repository state
+git status
 ```
 
-**Set your identity (once per machine):**
+### Set Your Git Identity
+
+Before making your first commit, configure your name and email address. You usually need to do this only **once per machine**.
+
 ```bash
 git config --global user.name "Your_Name"
 git config --global user.email "Your_Email"
 ```
 
-### 🔑 The BIG 4 Commands
+You can verify your configuration with:
+
 ```bash
-git init                      # start a repo
-git status                    # check current state
-git add <filename>            # stage a file (space-separate multiple)
-git commit -m "Commit_Message"  # save a snapshot
+git config --global user.name
+git config --global user.email
 ```
 
-**More everyday commands:**
+---
+
+### 🔑 The Big Four Git Commands
+
+These four commands cover most of your everyday Git workflow:
+
+1. `git status`
+2. `git add`
+3. `git commit`
+4. `git log`
+
+---
+
+### 1. `git status`
+
+Shows the **current state of your repository**.
+
+It tells you which files are:
+
+- Modified
+- Staged
+- Untracked
+- Ready to commit
+
 ```bash
-git log                   # full history
-git log --oneline         # compact history
-git add .                 # stage everything
-git restore --staged <filename>  # unstage a file
+git status
 ```
+
+For a shorter and more compact output:
+
+```bash
+git status -s
+```
+
+Example:
+
+```text
+M  README.md
+?? notes.txt
+```
+
+Here:
+
+- `M` means the file has been modified.
+- `??` means Git is not yet tracking the file.
+
+---
+
+### 2. `git add`
+
+Stages changes so they can be included in your **next commit**.
+
+#### Stage one file
+
+```bash
+git add README.md
+```
+
+#### Stage multiple files
+
+```bash
+git add README.md main.py
+```
+
+#### Stage all changes
+
+```bash
+git add .
+```
+
+#### Stage all files of one type
+
+```bash
+git add *.py
+```
+
+> **Note:** `git add` does not permanently save your changes. It only moves them into the **staging area**, ready for the next commit.
+
+---
+
+### 3. `git commit`
+
+Creates a **saved snapshot** of your staged changes.
+
+```bash
+git commit -m "add README file"
+```
+
+A good commit message should briefly explain what changed.
+
+Example:
+
+```bash
+git commit -m "fix login validation"
+```
+
+You can also stage and commit **already tracked files** in one command:
+
+```bash
+git commit -am "fix typo in main script"
+```
+
+> **Important:**  
+> `git commit -am` only works with files that Git is **already tracking**.  
+> New or untracked files must first be staged using `git add`.
+
+Example:
+
+```bash
+git add new_file.py
+git commit -m "add new Python file"
+```
+
+---
+
+### 4. `git log`
+
+Shows the **commit history** of your repository.
+
+#### Full commit history
+
+```bash
+git log
+```
+
+#### Compact one-line history
+
+```bash
+git log --oneline
+```
+
+Example:
+
+```text
+a1b2c3d add README file
+e4f5g6h fix login validation
+7h8i9j0 initial commit
+```
+
+#### Show the last 5 commits
+
+```bash
+git log --oneline -5
+```
+
+#### Display branch and merge history as a graph
+
+```bash
+git log --oneline --graph --all
+```
+
+This is especially useful when working with **multiple branches**.
+
+---
+
+### The Basic Git Lifecycle
+
+A normal Git workflow usually follows this cycle:
+
+```bash
+# 1. check what changed
+git status
+
+# 2. stage your changes
+git add .
+
+# 3. save the staged changes
+git commit -m "describe your changes"
+
+# 4. review commit history
+git log --oneline
+```
+
+**Think of it as:**
+
+`Check → Stage → Save → Review`
+
+---
+
+### More Useful Everyday Commands
+
+#### Unstage a file
+
+Removes a file from the staging area without deleting your changes.
+
+```bash
+git restore --staged <filename>
+```
+
+Example:
+
+```bash
+git restore --staged README.md
+```
+
+#### Stage everything
+
+```bash
+git add .
+```
+
+#### View compact history
+
+```bash
+git log --oneline
+```
+
+#### View graphical history
+
+```bash
+git log --oneline --graph --all
+```
+
+---
+
+### Command Reference at a Glance
+
+| Command | What It Does |
+|---|---|
+| `git init` | Initializes a new Git repository in the current folder. |
+| `git status` | Shows staged, modified, and untracked files in the working directory. |
+| `git status -s` | Displays a compact summary of the repository state. |
+| `git add <filename>` | Stages a specific file for the next commit. |
+| `git add .` | Stages all current changes for the next commit. |
+| `git add *.py` | Stages all matching `.py` files. |
+| `git commit -m "message"` | Creates a new snapshot with a descriptive message. |
+| `git commit -am "message"` | Stages tracked modified files and commits them in one step. |
+| `git log` | Displays the complete commit history. |
+| `git log --oneline` | Displays each commit in a compact one-line format. |
+| `git log --oneline -5` | Displays the five most recent commits. |
+| `git log --oneline --graph --all` | Visualizes branch and merge history as a graph. |
+| `git restore --staged <filename>` | Removes a file from staging while keeping its changes. |
 
 ---
 
