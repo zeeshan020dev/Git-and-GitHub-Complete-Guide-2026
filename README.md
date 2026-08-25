@@ -39,7 +39,7 @@
 
 ## 1. Introduction
 
-# Welcome to the **Git & GitHub Handbook** 👋
+### Welcome to the **Git & GitHub Handbook** 👋
 
 Learning Git doesn’t have to be hard. This handbook is a **beginner-friendly, practical guide** to help you understand **Git and GitHub from scratch** without the jargon.
 
@@ -72,7 +72,7 @@ to earlier versions, and work without losing important edits.
 Think of Git as a timeline for your project. Each saved point is called a commit. You can review
 changes, compare versions, and undo mistakes when needed.
 
-## 📌 A Commit Timeline
+### 📌 A Commit Timeline
 
 ```mermaid
 flowchart LR
@@ -83,7 +83,7 @@ flowchart LR
 
 Git is often used with **GitHub**, which gives you a place to store repositories online, share code, and collaborate with others.
 
-## 🚀 Use Git When You Want
+### 🚀 Use Git When You Want
 
 <table>
 <tr>
@@ -123,7 +123,7 @@ The ability to undo mistakes without losing important edits.
 </tr>
 </table>
 
-## 🔄 Visualizing a Simple Git Workflow
+### 🔄 Visualizing a Simple Git Workflow
 
 | Step | Action | Git Command |
 |:---:|:--------|:-----------|
@@ -157,7 +157,7 @@ With version control, you can:
 
 ---
 
-## 🏛️ Centralized Version Control System (CVCS)
+### 🏛️ Centralized Version Control System (CVCS)
 
 In a centralized model, one server holds the official copy of the project. Developers check out files, make changes, and check them back in.
 
@@ -172,7 +172,7 @@ In a centralized model, one server holds the official copy of the project. Devel
 
 ---
 
-## 🌐 Distributed Version Control System (DVCS)
+### 🌐 Distributed Version Control System (DVCS)
 
 In a distributed model, every developer has a full copy of the project history on their machine. You commit locally first, then sync with a remote when ready.
 
@@ -187,7 +187,7 @@ In a distributed model, every developer has a full copy of the project history o
 
 ---
 
-# ⚖️ Centralized vs Distributed
+## ⚖️ Centralized vs Distributed
 
 | Feature | 🏛️ Centralized VCS | 🌐 Distributed VCS |
 |----------|-------------------|--------------------|
@@ -229,7 +229,7 @@ In a distributed model, every developer has a full copy of the project history o
 
 ---
 
-# 🚀 Why Git Uses a Distributed Model
+### 🚀 Why Git Uses a Distributed Model
 
 Git was created by **Linus Torvalds** in **2005** for large teams working on the **Linux Kernel**. A distributed model means:
 
@@ -242,7 +242,7 @@ Git was created by **Linus Torvalds** in **2005** for large teams working on the
 
 ---
 
-## 📝 In Short
+### 📝 In Short
 
 - Centralized VCS relies on one server.
 - Distributed VCS gives everyone a full copy.
@@ -300,9 +300,9 @@ Before you can start tracking your projects with Git, you need to install it on 
 
 ---
 
-# 🪟 Installing Git on Windows
+### 🪟 Installing Git on Windows
 
-### Method 1: Download from the Official Website (Recommended)
+#### Method 1: Download from the Official Website (Recommended)
 
 1. Visit **https://git-scm.com/downloads**
 2. Download the latest version for **Windows**.
@@ -315,7 +315,7 @@ Before you can start tracking your projects with Git, you need to install it on 
 
 ---
 
-### Method 2: Install Using Winget
+#### Method 2: Install Using Winget
 
 If you have **Windows Package Manager (Winget)** installed, open **Command Prompt** or **PowerShell** and run:
 
@@ -327,11 +327,11 @@ Wait for the installation to complete.
 
 ---
 
-# 🍎 Installing Git on macOS
+### 🍎 Installing Git on macOS
 
 There are two common ways to install Git on macOS.
 
-## Method 1: Install Xcode Command Line Tools (Recommended)
+#### Method 1: Install Xcode Command Line Tools (Recommended)
 
 Open **Terminal** and run:
 
@@ -345,7 +345,7 @@ Git will be installed automatically along with Apple's Command Line Tools.
 
 ---
 
-## Method 2: Install Using Homebrew
+#### Method 2: Install Using Homebrew
 
 If you already have **Homebrew** installed, simply run:
 
@@ -355,11 +355,11 @@ brew install git
 
 ---
 
-# 🐧 Installing Git on Linux
+### 🐧 Installing Git on Linux
 
 Git is available through your Linux distribution's package manager.
 
-## Debian / Ubuntu
+#### Debian / Ubuntu
 
 Update your package list:
 
@@ -375,7 +375,7 @@ sudo apt install git
 
 ---
 
-## Fedora
+#### Fedora
 
 ```bash
 sudo dnf install git
@@ -383,7 +383,7 @@ sudo dnf install git
 
 ---
 
-## Arch Linux
+#### Arch Linux
 
 ```bash
 sudo pacman -S git
@@ -391,7 +391,7 @@ sudo pacman -S git
 
 ---
 
-# ✅ Verify the Installation
+### ✅ Verify the Installation
 
 After installing Git, open your terminal (or Command Prompt) and run:
 
@@ -409,7 +409,7 @@ git version 2.x.x
 
 ---
 
-# 🛠️ Choosing Your Git Workflow
+### 🛠️ Choosing Your Git Workflow
 
 Once Git is installed, you can use it in different ways depending on your preference.
 
@@ -423,7 +423,7 @@ Once Git is installed, you can use it in different ways depending on your prefer
 
 ---
 
-# ⚡ Quick Installation Summary
+### ⚡ Quick Installation Summary
 
 | Platform | Installation Method | Command / Website |
 |----------|---------------------|-------------------|
@@ -443,7 +443,7 @@ Git moves your changes through **four areas** before they reach GitHub:
 
 ---
 
-## The Four Areas of Git
+### The Four Areas of Git
 
 | 📁 | 📋 | 💾 | ☁️ |
 |:--:|:--:|:--:|:--:|
@@ -456,7 +456,7 @@ Git moves your changes through **four areas** before they reach GitHub:
 |:---|:---|
 | **03) Local Repository**<br><br>Where commits are stored permanently on your machine. Use `git commit` to save a snapshot. | **04) Remote Repository**<br><br>The copy on GitHub (or another host). Use `git push` to upload and `git pull` to download. |
 
-# The Git Workflow
+### The Git Workflow
 
 A full cycle from editing to pushing looks like this:
 
@@ -473,7 +473,7 @@ git commit -m "describe your change"
 git push origin main
 ```
 
-## Understanding Snapshots
+### Understanding Snapshots
 
 Each commit is a snapshot of your entire project at one moment. Git stores these efficiently so that you can jump back to any point in history.
 
