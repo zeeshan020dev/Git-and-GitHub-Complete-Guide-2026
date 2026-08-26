@@ -1148,14 +1148,54 @@ This graph helps you understand how branches have changed and merged over time.
 
 ## 12. Merge Conflict
 
+Merge conflicts happen when Git cannot automatically combine changes made to the same lines of a file.
+
+### Why Conflicts Happen
+
+Common causes include:
+
+- Two people edit the same line of a file.
+- You edit a file locally while someone else pushes changes to the same part.
+- You merge branches that contain overlapping edits.
+- You rebase a branch that has conflicting changes.
+
+For example, both branches may change the same line after splitting from the same commit:
+
+```text
+      C   feature/search changed line 10
+     /
+A─B─E    main also changed line 10
+````
+
+Both branches changed the same part of the file after commit `B`.
+
+Git cannot decide automatically which version should be kept, so it reports a **merge conflict**.
+
+---
+
+### Resolving a Merge Conflict
+
+Try to merge the branch:
+
 ```bash
-git switch -c <branchname>   # create + switch in one step
-git merge <branchname>
+git merge feature/search
 ```
 
-A **conflict** happens when both branches changed the *same lines*. Git marks it:
+If Git finds conflicting changes, you may see output similar to:
 
+```text
+CONFLICT (content): Merge conflict in filename.py
 ```
+
+Open the conflicted file and Git will show special conflict markers.
+
+---
+
+### Conflict Markers
+
+A conflicted file may look like this:
+
+```text
 <<<<<<< HEAD
 your version
 =======
@@ -1163,15 +1203,126 @@ their version
 >>>>>>> feature/search
 ```
 
-Fix it manually, remove the markers, then:
-```bash
-git add filename.py
-git commit -m "resolve merge conflict"
+The markers mean:
+
+* `<<<<<<< HEAD` shows the version from your current branch.
+* `=======` separates the two conflicting versions.
+* `>>>>>>> feature/search` shows the version from the branch being merged.
+
+Edit the file manually and keep the correct code.
+
+Then remove all conflict markers:
+
+```text
+<<<<<<< HEAD
+=======
+>>>>>>> feature/search
 ```
 
-**Stuck? Abort and start over:**
+After resolving the file, stage it:
+
+```bash
+git add filename.py
+```
+
+Then create a commit:
+
+```bash
+git commit -m "resolve merge conflict in filename.py"
+```
+
+---
+
+### Understanding `git diff`
+
+`git diff` helps you inspect changes before committing them.
+
+It can compare different areas of your Git workflow.
+
+```text
+Working Directory → Staging Area → Repository
+```
+
+#### View Unstaged Changes
+
+Compare your working directory with the staging area:
+
+```bash
+git diff
+```
+
+This shows changes you have made but have not staged yet.
+
+---
+
+#### View Staged Changes
+
+Compare the staging area with the last commit (`HEAD`):
+
+```bash
+git diff --staged
+```
+
+This shows changes that have already been staged with `git add`.
+
+---
+
+#### View Changes in a Specific File
+
+```bash
+git diff filename.py
+```
+
+During a merge conflict, this can help you inspect conflicting changes in a specific file.
+
+---
+
+### Quick `git diff` Reference
+
+| Command                | What It Compares                     |
+| ---------------------- | ------------------------------------ |
+| `git diff`             | Working directory vs staging area    |
+| `git diff --staged`    | Staging area vs last commit (`HEAD`) |
+| `git diff filename.py` | Changes in a specific file           |
+
+---
+
+### Best Practices to Avoid Conflicts
+
+Pull the latest changes before starting work:
+
+```bash
+git pull origin main
+```
+
+Before pushing your work, make sure your local branch is updated:
+
+```bash
+git pull origin main
+git push origin main
+```
+
+Other good practices include:
+
+* Keep feature branches short-lived.
+* Commit and synchronize changes regularly.
+* Communicate with teammates when working on the same files.
+* Avoid making large unrelated changes in the same commit.
+
+---
+
+### Abort a Merge if You Are Stuck
+
+If you are in the middle of a merge conflict and want to cancel the merge:
+
 ```bash
 git merge --abort
+```
+
+`git merge --abort` stops the in-progress merge and attempts to return your files to the state they were in before you ran:
+
+```bash
+git merge
 ```
 
 ---
