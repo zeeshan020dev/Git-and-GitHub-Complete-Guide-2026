@@ -1329,17 +1329,187 @@ git merge
 
 ## 13. Stashing in Git
 
-Temporarily park uncommitted work so you can switch tasks:
+Git stash saves uncommitted work temporarily so you can switch tasks without creating a half-finished commit.
+
+### Why Git Stash Exists
+
+Suppose you are working on a feature, but suddenly need to fix an urgent bug on `main`.
+
+Instead of committing unfinished work, you can temporarily store your changes using Git stash.
+
+```text
+Working on feature
+      ↓
+git stash
+      ↓
+Switch branch / fix bug
+      ↓
+Return to feature
+      ↓
+git stash pop
+````
+
+---
+
+### Saving Work Temporarily
+
+Save your current uncommitted changes:
 
 ```bash
-git stash                          # save current changes
-git stash push -m "wip on login"   # save with a label
-git stash list                     # see all stashes
-git stash pop                      # restore + remove from list
-git stash apply                    # restore + keep in list
+git stash
 ```
 
-> 💡 If `git log --oneline` opens a scrollable pager, press `q` to exit.
+You can also add a message so you remember what the stash contains:
+
+```bash
+git stash push -m "wip on search feature"
+```
+
+This temporarily stores your work and gives you a cleaner working directory.
+
+---
+
+### Viewing Stashes
+
+To see all saved stashes:
+
+```bash
+git stash list
+```
+
+Example:
+
+```text
+stash@{0}: On feature/search: wip on search feature
+stash@{1}: On feature/login: half-done login form
+```
+
+Each stash receives an identifier such as:
+
+```text
+stash@{0}
+stash@{1}
+```
+
+---
+
+### Restoring a Stash
+
+Apply the most recent stash:
+
+```bash
+git stash apply
+```
+
+This restores the changes but keeps the stash in the stash list.
+
+To apply a specific stash:
+
+```bash
+git stash apply stash@{1}
+```
+
+---
+
+### Applying vs Popping
+
+`git stash apply` restores the saved changes but keeps the stash:
+
+```bash
+git stash apply
+```
+
+`git stash pop` restores the saved changes and removes the stash from the list:
+
+```bash
+git stash pop
+```
+
+In simple terms:
+
+```text
+git stash apply → restore + keep
+git stash pop   → restore + remove
+```
+
+---
+
+### Real-World Example
+
+Suppose you are working on a login feature but need to fix an urgent issue on `main`.
+
+First, save your unfinished work:
+
+```bash
+git stash push -m "half-done login form"
+```
+
+Switch to `main`:
+
+```bash
+git switch main
+```
+
+Create a branch for the urgent fix:
+
+```bash
+git switch -c hotfix/typo
+```
+
+Fix the issue, commit it, and complete your work.
+
+Then return to your feature branch:
+
+```bash
+git switch feature/login
+```
+
+Restore your saved work:
+
+```bash
+git stash pop
+```
+
+You can now continue working from where you stopped.
+
+---
+
+### Deleting a Stash
+
+If you no longer need a specific stash:
+
+```bash
+git stash drop stash@{0}
+```
+
+This permanently removes that stash from the list.
+
+---
+
+### Clearing All Stashes
+
+To remove every saved stash:
+
+```bash
+git stash clear
+```
+
+Be careful with this command because it removes all stashes.
+
+---
+
+### Quick Command Reference
+
+| Command                       | What It Does                                            |
+| ----------------------------- | ------------------------------------------------------- |
+| `git stash`                   | Temporarily saves current uncommitted changes.          |
+| `git stash push -m "message"` | Saves changes with a descriptive label.                 |
+| `git stash list`              | Shows all saved stashes.                                |
+| `git stash apply`             | Restores the latest stash and keeps it in the list.     |
+| `git stash apply stash@{1}`   | Restores a specific stash.                              |
+| `git stash pop`               | Restores the latest stash and removes it from the list. |
+| `git stash drop stash@{0}`    | Deletes a specific stash.                               |
+| `git stash clear`             | Deletes all saved stashes.                              |
 
 ---
 
