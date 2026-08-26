@@ -1666,25 +1666,137 @@ git push origin --delete v1.0.0
 
 ## 15. Git Rebase
 
-Rebase replays your commits on top of another branch, avoiding an extra merge commit and keeping history **linear**.
+Git rebase moves your branch commits on top of another branch to create a cleaner and more linear history.
 
-```
-Before:  A─B─E (main)     A─B─E─C'─D' (feature, after rebase)
-              \  C─D (feature)
-```
+### What is Rebase?
+
+Instead of creating a merge commit, `git rebase` replays your commits on top of the latest commits from another branch.
+
+Suppose your feature branch diverged from `main` at commit `B`.
+
+Your feature branch has commits `C` and `D`, while `main` has moved forward to commit `E`:
+
+```text
+      C─D        feature/search
+     /
+A─B─E            main
+````
+
+After running:
 
 ```bash
 git switch feature/search
 git rebase main
 ```
 
-| | Merge | Rebase |
-|---|---|---|
-| History | Preserves branch structure | Linear, cleaner |
-| Merge commit | Yes | No |
-| Safe on shared branches | ✅ Yes | ⚠️ No |
+Git replays your feature commits on top of `E`:
 
-> ⚠️ Only rebase branches **you alone** work on — never rebase commits already pushed and shared.
+```text
+A─B─E─C'─D'
+    ↑       ↑
+   main   feature/search
+```
+
+`C'` and `D'` are new commits containing the same changes as `C` and `D`, but they are now based on the latest `main`.
+
+---
+
+### Rebase vs Merge
+
+A merge keeps the original branch structure and creates a merge commit.
+
+```text
+      C─D
+     /   \
+A─B─E─────M
+```
+
+Here, `M` is the merge commit.
+
+A rebase instead replays your work on top of the updated branch:
+
+```text
+A─B─E─C'─D'
+```
+
+This creates a straight, linear history without an extra merge commit.
+
+---
+
+### Merge vs Rebase
+
+|                         | Merge                      | Rebase             |
+| ----------------------- | -------------------------- | ------------------ |
+| History                 | Preserves branch structure | Linear and cleaner |
+| Merge commit            | Yes                        | No                 |
+| Safe on shared branches | Yes                        | No                 |
+
+---
+
+### When to Use Rebase
+
+Rebase is useful:
+
+* Before opening a pull request to keep your branch history clean
+* To sync a feature branch with the latest changes from `main`
+* On branches that only you are working on
+
+Example:
+
+```bash
+# update your feature branch with the latest main
+
+git switch feature/search
+git fetch origin
+git rebase origin/main
+```
+
+This fetches the latest remote changes and replays your feature commits on top of the latest `origin/main`.
+
+---
+
+### Rebasing Before a Pull Request
+
+Before pushing your feature branch for a pull request:
+
+```bash
+git switch feature/search
+git rebase main
+git push --force-with-lease origin feature/search
+```
+
+Because rebase rewrites commit history, a normal push may be rejected.
+
+`--force-with-lease` safely updates the remote branch while checking that no unexpected remote changes have been added.
+
+---
+
+### Best Practices
+
+* Rebase branches that only you are working on.
+* Rebase your feature branch before opening a pull request if you want a cleaner history.
+* Never rebase commits that have already been pushed to a shared branch.
+* Remember that rebase creates new versions of your commits.
+
+---
+
+### Abort a Rebase
+
+If the rebase becomes difficult or you want to cancel it:
+
+```bash
+git rebase --abort
+```
+
+This stops the current rebase and returns your branch to the state it was in before the rebase started.
+
+---
+
+### Important Rule
+
+> ⚠️ Never rebase commits that have already been pushed to a shared branch.
+
+Rebase rewrites commit history, so changing commits that other developers are already using can cause synchronization problems.
 
 ---
 
