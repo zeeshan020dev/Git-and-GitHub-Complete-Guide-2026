@@ -1515,19 +1515,152 @@ Be careful with this command because it removes all stashes.
 
 ## 14. Git Tags
 
-Tags mark a **fixed point** in history — usually a release. Unlike branches, they don't move.
+Git tags mark important points in your repository history, usually releases.
 
-```bash
-git tag v1.0.0                              # lightweight tag
-git tag -a v1.0.0 -m "first stable release" # annotated tag (recommended)
-git push origin v1.0.0                      # push a tag
-git push origin --tags                      # push all tags
+### Why Tags Exist
+
+Git tags are useful for:
+
+- Marking version releases such as `v1.0.0`
+- Bookmarking stable checkpoints
+- Referencing a specific commit permanently
+
+Unlike branches, tags do not move when new commits are added.
+
+Example:
+
+```text
+A─B─C─D
+    ↑   ↑
+ v1.0.0 main
+````
+
+After adding more commits:
+
+```text
+A─B─C─D─E─F
+    ↑       ↑
+ v1.0.0    main
 ```
 
-| Type | Use case |
-|---|---|
-| Lightweight | Quick pointer, no metadata |
-| Annotated | Stores author, date, message — best for releases |
+`v1.0.0` stays on commit `C`, while `main` continues moving forward.
+
+---
+
+### Lightweight Tags
+
+A lightweight tag is a simple pointer to a commit.
+
+It does not store extra metadata such as an author, date, or message.
+
+```bash
+git tag v1.0.0
+```
+
+---
+
+### Annotated Tags
+
+Annotated tags are recommended for releases.
+
+They store additional information such as:
+
+* Author
+* Date
+* Tag message
+
+Create an annotated tag:
+
+```bash
+git tag -a v1.0.0 -m "first stable release"
+```
+
+---
+
+### Creating Tags
+
+Tag the current commit:
+
+```bash
+git tag v1.0.0
+```
+
+Tag a specific commit:
+
+```bash
+git tag v0.9.0 a1b2c3d
+```
+
+Create an annotated tag with a message:
+
+```bash
+git tag -a v1.0.0 -m "release version 1.0.0"
+```
+
+---
+
+### Listing Tags
+
+List all tags:
+
+```bash
+git tag
+```
+
+List tags matching a specific pattern:
+
+```bash
+git tag -l "v1.*"
+```
+
+View details about a tag:
+
+```bash
+git show v1.0.0
+```
+
+---
+
+### Pushing Tags to GitHub
+
+Tags are not automatically pushed with normal commits.
+
+Push one specific tag:
+
+```bash
+git push origin v1.0.0
+```
+
+Push all local tags:
+
+```bash
+git push origin --tags
+```
+
+---
+
+### Deleting Tags
+
+Delete a tag locally:
+
+```bash
+git tag -d v1.0.0
+```
+
+Delete the same tag from GitHub:
+
+```bash
+git push origin --delete v1.0.0
+```
+
+---
+
+### Lightweight vs Annotated Tags
+
+| Type        | Use Case                                                   |
+| ----------- | ---------------------------------------------------------- |
+| Lightweight | Simple pointer to a commit with no extra metadata          |
+| Annotated   | Stores author, date, and message; recommended for releases |
 
 ---
 
