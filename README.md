@@ -250,6 +250,8 @@ Git was created by **Linus Torvalds** in **2005** for large teams working on the
 - Distributed VCS gives everyone a full copy.
 - Git is distributed by design.
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 4. Git vs GitHub
@@ -291,6 +293,8 @@ A repository (repo) is a project folder tracked by Git. It contains your files p
 | Runs on | Your computer | The cloud |
 | Needs internet | No (for local work) | Yes (to sync) |
 | Stores history | Yes | Yes (as a remote copy) |
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -437,6 +441,8 @@ Once Git is installed, you can use it in different ways depending on your prefer
 | 🐧 **Fedora** | DNF | `sudo dnf install git` |
 | 🐧 **Arch Linux** | Pacman | `sudo pacman -S git` |
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 6. How Git Works
@@ -483,6 +489,8 @@ Each commit is a snapshot of your entire project at one moment. Git stores these
 # See all snapshots
 git log --oneline
 ```
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -754,6 +762,8 @@ git log --oneline --graph --all
 | `git log --oneline --graph --all` | Visualizes branch and merge history as a graph. |
 | `git restore --staged <filename>` | Removes a file from staging while keeping its changes. |
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 8. Git Scenario 1: Single User Setup
@@ -839,6 +849,8 @@ Use `git commit -m` to save a permanent snapshot with a clear message.
 **REVIEW**
 
 Use `git log --oneline` to inspect your commit history and confirm everything looks right.
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -985,8 +997,9 @@ git commit -m "stop tracking .env"
 
 The file will remain on your computer, but Git will stop tracking it.
 
----
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
+---
 
 ## 10. Tracking Empty Directories
 
@@ -997,6 +1010,8 @@ mkdir logs
 touch logs/.gitkeep
 git add logs/.gitkeep
 ```
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -1145,6 +1160,8 @@ Here:
 * `M` is a merge commit where the two lines of development come back together.
 
 This graph helps you understand how branches have changed and merged over time.
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -1326,6 +1343,8 @@ git merge --abort
 ```bash
 git merge
 ```
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -1513,6 +1532,8 @@ Be careful with this command because it removes all stashes.
 | `git stash drop stash@{0}`    | Deletes a specific stash.                               |
 | `git stash clear`             | Deletes all saved stashes.                              |
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 14. Git Tags
@@ -1663,6 +1684,8 @@ git push origin --delete v1.0.0
 | ----------- | ---------------------------------------------------------- |
 | Lightweight | Simple pointer to a commit with no extra metadata          |
 | Annotated   | Stores author, date, and message; recommended for releases |
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -2418,6 +2441,8 @@ GitHub Remote Repository
 | `git pull` | Retrieves remote changes and integrates them into the current branch. |
 | `git fetch` | Retrieves remote changes without automatically integrating them. |
 | `ssh -T git@github.com` | Tests SSH authentication with GitHub. |
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -3289,6 +3314,8 @@ Merge into main
 | Clone to Desktop | GitHub → `Code → Open with GitHub Desktop` |
 | Star repository | GitHub → `Star` |
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 18. Using Git in VS Code
@@ -3663,6 +3690,8 @@ Sync / Push
 GitHub
 ```
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 19. Git Scenario 2: Multi-User Setup
@@ -3740,6 +3769,8 @@ Work on the Issue
 Close the Issue
 
 ```
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -3852,6 +3883,8 @@ Then open a pull request on GitHub.
 | `git reset --hard HEAD~1` | Remove the latest commit and its changes. |
 | `git switch -c name` | Create and switch to a new branch. |
 | `git push -u origin name` | Publish the branch to GitHub. |
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
@@ -4075,6 +4108,8 @@ git push -u origin feature/my-feature
 # open a pull request on GitHub
 
 ```
+
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
 
 ---
 
