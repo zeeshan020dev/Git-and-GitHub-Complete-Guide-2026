@@ -3595,7 +3595,7 @@ git push -u origin main
 
 ### Git Graph Extension
 
-For a visual representation of branches, commits, and merges, you can install the **Git Graph** extension.
+For a visual representation of branches, commits, and merges, you can install the **Git Graph** extension by mhutchie.
 
 Open Extensions:
 
