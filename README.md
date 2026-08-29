@@ -3665,25 +3665,78 @@ GitHub
 
 ## 19. Git Scenario 2: Multi-User Setup
 
-**Invite collaborators** via repository Settings, then use **Issues** to track work:
+When multiple people work on the same repository, GitHub helps manage contributors, tasks, and discussions.
+
+### Invite a Contributor
+
+To invite someone to your GitHub repository:
+
+1. Open your repository on GitHub.
+2. Go to **Settings**.
+3. Click **Collaborators**.
+4. Click **Add people**.
+5. Search for the person's GitHub username or email.
+6. Select the user and send the invitation.
+7. The user must accept the invitation before they can contribute.
+
+---
+
+### Create an Issue
+
+GitHub Issues are used to track bugs, features, tasks, or improvements.
+
+To create an issue:
+
+1. Open your repository.
+2. Click the **Issues** tab.
+3. Click **New issue**.
+4. Fill in the issue details.
+5. Click **Submit new issue**.
+
+---
+
+### Understanding Issue Fields
 
 | Field | Purpose |
 |---|---|
-| Title | Short summary |
-| Description | Full details |
-| Assignees | Who's responsible |
-| Labels | Category (bug, enhancement...) |
-| Project / Milestone | Groups issue under bigger goals |
-| Development | Links a branch/PR to the issue |
+| **Title** | Short name of the issue or task. |
+| **Description** | Explains the problem, feature, or task in detail. |
+| **Assignees** | Shows who is responsible for the issue. |
+| **Labels** | Categorizes the issue, such as `bug`, `enhancement`, or `documentation`. |
+| **Project** | Adds the issue to a GitHub Project for better task management. |
+| **Milestone** | Groups related issues under a larger goal or release. |
+| **Relationships** | Connects related or dependent issues. |
+| **Development** | Links branches and pull requests to the issue. |
+| **Close issue** | Marks the issue as completed or no longer needed. |
 
-> 💬 Issues work like a social feed — comment, react, and close once resolved.
+---
 
-**Team branch workflow:**
-```bash
-git checkout -b feature/login       # 1. create & switch to a feature branch
-git add .
-git commit -m "add login page"      # 2. make changes and commit
-git push -u origin feature/login    # 3. push and open a pull request
+### Issues Work Like a Discussion
+
+GitHub Issues also work like a discussion thread.
+
+You can:
+
+- Comment on an issue
+- Reply to other contributors
+- Mention users with `@username`
+- Add emoji reactions such as 👍 ❤️ 🎉
+- Discuss the task with your team
+- Close the issue when the work is finished
+
+A simple workflow is:
+
+```text
+Create Issue
+    ↓
+Assign Contributor
+    ↓
+Discuss the Task
+    ↓
+Work on the Issue
+    ↓
+Close the Issue
+
 ```
 
 ---
