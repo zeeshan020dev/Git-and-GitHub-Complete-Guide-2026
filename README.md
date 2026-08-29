@@ -4086,16 +4086,18 @@ The real skill comes from practice. Use Git on every project, even small ones. C
 
 ## Author ✍️
 
+Click the box below to visit the author's GitHub profile and explore more projects, open-source work, and contributions.
+
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="150px">
+      <td align="center" valign="top" width="220px">
         <a href="https://github.com/zeeshan020dev">
           <img src="https://github.com/zeeshan020dev.png?size=100" width="100px;" alt="Muhammad Zeeshan Islam"/>
           <br />
-          <sub><b>Muhammad Zeeshan Islam</b></sub>
+          <sub><b>Muhammad&nbsp;Zeeshan&nbsp;Islam</b></sub>
         </a>
-          <br>
+        <br />
         <a href="https://github.com/zeeshan020dev" title="GitHub Profile">💻</a>
         <a href="https://github.com/zeeshan020dev" title="Documentation">📖</a>
       </td>
