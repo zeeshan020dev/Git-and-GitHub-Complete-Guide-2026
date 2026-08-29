@@ -142,11 +142,15 @@ flowchart LR
     --> E["🌍 GitHub Repository"]
 ```
 
-<div align="left">
+<p align="center">
+  <b>Click the button below to return to the Table of Contents.</b>
+</p>
 
-📑 **[Click here to return to the Table of Contents](#table-of-contents) for a quick refresher.**
-
-</div>
+<p align="center">
+  <a href="#table-of-contents">
+    <img src="https://img.shields.io/badge/📑%20Back%20to%20Table%20of%20Contents-Quick%20Refresher-2ea44f?style=for-the-badge" alt="Back to Table of Contents"/>
+  </a>
+</p>
 
 ---
 
