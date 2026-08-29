@@ -3743,15 +3743,113 @@ Close the Issue
 
 ## 20. Modern Workflow
 
-- 🤖 **AI-generated commit messages** — many tools (including VS Code) can draft one for you from your diff.
-- 🌿 **Branch-per-experiment** — trying 4 different approaches? Make 4 branches, merge only the one that works.
+AI tools can generate and modify code very quickly. Git helps you keep those changes safe by letting you review, commit, and roll back AI-generated work.
+
+### Using Git While Vibe Coding
+
+Before letting AI make major changes, save your current working state:
 
 ```bash
+git add .
+git commit -m "working state before AI refactor"
+```
+
+After AI makes changes, review them before committing:
+
+```bash
+git diff
+git add .
+git commit -m "AI-generated dashboard layout"
+```
+
+If the AI changes are not useful, you can roll them back:
+
+```bash
+git restore .
+```
+
+Or roll back the last commit:
+
+```bash
+git reset --hard HEAD~1
+```
+
+---
+
+### Reviewing AI-Generated Code
+
+Never commit AI-generated code blindly.
+
+Check every changed line:
+
+```bash
+git diff
+```
+
+See a quick summary of changed files:
+
+```bash
+git diff --stat
+```
+
+---
+
+### AI-Generated Commit Messages
+
+Some AI tools can suggest commit messages for you.
+
+Always review and improve them so they clearly describe the change.
+
+Bad:
+
+```bash
+git commit -m "update files"
+```
+
+Good:
+
+```bash
+git commit -m "add input validation to signup form"
+```
+
+---
+
+### Daily Git Workflow
+
+Start your work by getting the latest changes and creating a new branch:
+
+```bash
+git pull origin main
 git switch -c feature/todays-work
+```
+
+Commit each logical change during your session:
+
+```bash
 git add .
 git commit -m "describe each logical step"
+```
+
+At the end of your session, publish the branch:
+
+```bash
 git push -u origin feature/todays-work
 ```
+
+Then open a pull request on GitHub.
+
+---
+
+### Quick Reference
+
+| Command | When to Use It |
+|---|---|
+| `git diff` | Review every changed line before staging. |
+| `git diff --stat` | See a file-by-file summary of changes. |
+| `git restore .` | Discard uncommitted changes after a bad AI edit. |
+| `git reset --hard HEAD~1` | Remove the latest commit and its changes. |
+| `git switch -c name` | Create and switch to a new branch. |
+| `git push -u origin name` | Publish the branch to GitHub. |
 
 ---
 
