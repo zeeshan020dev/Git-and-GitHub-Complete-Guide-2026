@@ -4083,3 +4083,11 @@ You started with the basics: what version control is, how commits and branches w
 ### Keep Practicing
 
 The real skill comes from practice. Use Git on every project, even small ones. Commit often, write clear messages, and pull before you push. When something goes wrong, you have the tools to fix it.
+
+## 👤 Author
+
+**[Muhammad Zeeshan Islam](https://github.com/zeeshan020dev)**
+
+<a href="https://github.com/zeeshan020dev">
+  <img src="https://img.shields.io/badge/GitHub-zeeshan020dev-ffffff?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" />
+</a>
