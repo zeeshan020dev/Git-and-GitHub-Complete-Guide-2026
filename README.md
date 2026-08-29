@@ -4076,9 +4076,10 @@ git push -u origin feature/my-feature
 
 ---
 
-<div align="center">
+### You Now Have a Solid Foundation ✨
 
-### 🎉 You now have a complete, practical foundation in Git & GitHub.
-**The best way to lock it in: open a terminal right now and try every command above.**
+You started with the basics: what version control is, how commits and branches work, and the core commands that drive every workflow. From there, you learned to collaborate with others, resolve conflicts, undo mistakes, and use GitHub to share and review code.
 
-</div>
+### Keep Practicing
+
+The real skill comes from practice. Use Git on every project, even small ones. Commit often, write clear messages, and pull before you push. When something goes wrong, you have the tools to fix it.
