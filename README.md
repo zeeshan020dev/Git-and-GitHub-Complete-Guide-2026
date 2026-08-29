@@ -2419,16 +2419,873 @@ GitHub Remote Repository
 
 ---
 
-## 17. GitHub Desktop
+## 17. GitHub Desktop: GUI for Git and GitHub
 
-A free **GUI for Git and GitHub** — clone, commit, branch, push, and pull with buttons instead of commands.
+GitHub Desktop is a free, open-source graphical user interface (GUI) that lets you work with Git and GitHub without typing Git commands manually.
 
-- 🌐 Public repos are viewable by anyone, even in incognito. Private repos show a 404 to outsiders.
-- **Pull Request (PR):** a request to merge someone's proposed changes into your project.
-- **Forking:** create your own copy of someone else's repo to freely edit, then open a PR back to contribute.
-- ⭐ **Starring** = GitHub's "like" button.
+Using GitHub Desktop, you can:
 
-> 🎯 **Pro tip:** Practice with a friend — create a sandbox repo, push/pull, branch, and open PRs on each other's code.
+- Create and clone repositories
+- Make commits
+- Create and switch branches
+- Push changes to GitHub
+- Pull changes from GitHub
+- Create pull requests
+- Work with forks
+- Review your Git history visually
+
+---
+
+### Download and Install GitHub Desktop
+
+**Step 1:** Go to [desktop.github.com](https://desktop.github.com/).
+
+**Step 2:** Download GitHub Desktop for your operating system.
+
+For Windows:
+
+1. Click **Download for Windows**.
+2. Open the downloaded setup file.
+3. Wait for the installation to complete.
+4. GitHub Desktop will launch automatically.
+
+For macOS:
+
+1. Download GitHub Desktop for macOS.
+2. Open the downloaded file.
+3. Extract and open the GitHub Desktop application.
+4. Launch GitHub Desktop.
+
+---
+
+### Sign In to GitHub Desktop
+
+After installing GitHub Desktop, connect it to your GitHub account.
+
+On Windows:
+
+1. Open **GitHub Desktop**.
+2. Go to **File → Options**.
+3. Open the **Accounts** section.
+4. Click **Sign Into GitHub.com**.
+5. Click **Continue With Browser**.
+6. Sign in to your GitHub account in the browser.
+7. Complete two-factor authentication if enabled.
+8. Allow the browser to return you to GitHub Desktop.
+
+Once authenticated, GitHub Desktop can communicate with repositories on your GitHub account.
+
+---
+
+### Create a Repository in GitHub Desktop
+
+You can create a Git repository directly from GitHub Desktop.
+
+**Step 1:** Open GitHub Desktop.
+
+**Step 2:** Select:
+
+```text
+File → New Repository
+```
+
+If you have no repositories added yet, you may instead see:
+
+```text
+Create a New Repository on your Hard Drive
+```
+
+**Step 3:** Enter the repository information.
+
+**Name**
+
+Enter the repository name.
+
+Example:
+
+```text
+hello-github-desktop
+```
+
+**Description**
+
+Optionally describe what the project does.
+
+Example:
+
+```text
+A practice repository for learning GitHub Desktop
+```
+
+**Local Path**
+
+Choose where the repository should be stored on your computer.
+
+Example:
+
+```text
+Documents/GitHub/
+```
+
+GitHub Desktop will create the repository folder inside that location.
+
+**Initialize this repository with a README**
+
+Enable this option if you want GitHub Desktop to automatically create a `README.md` file.
+
+**Git Ignore**
+
+Optionally select a `.gitignore` template depending on the technology you are using.
+
+Examples:
+
+```text
+Python
+Node
+VisualStudio
+Unity
+```
+
+**License**
+
+Optionally select a software license.
+
+**Step 4:** Click:
+
+```text
+Create Repository
+```
+
+The repository now exists locally on your computer.
+
+---
+
+### Publish Your Repository on GitHub
+
+Creating a repository in GitHub Desktop does not automatically make it available on GitHub.
+
+You need to **publish** it.
+
+**Step 1:** Open the repository in GitHub Desktop.
+
+**Step 2:** Click:
+
+```text
+Publish repository
+```
+
+**Step 3:** Review the repository name.
+
+Example:
+
+```text
+hello-github-desktop
+```
+
+**Step 4:** Add or update the description if required.
+
+**Step 5:** Choose the repository visibility.
+
+GitHub Desktop provides the option:
+
+```text
+Keep this code private
+```
+
+If selected:
+
+```text
+Private Repository
+```
+
+If unselected:
+
+```text
+Public Repository
+```
+
+**Step 6:** If you belong to a GitHub organization, optionally choose the organization where you want to publish the repository.
+
+Otherwise, publish it under your personal GitHub account.
+
+**Step 7:** Click:
+
+```text
+Publish Repository
+```
+
+Your local repository is now connected to a remote repository on GitHub.
+
+---
+
+### Public vs Private Repositories
+
+A **public repository** can be viewed by anyone on the internet.
+
+You can test this by copying the repository URL and opening it in an incognito or private browser window.
+
+```text
+Public Repository
+      ↓
+Anyone can view it
+```
+
+A **private repository** can only be viewed by you and people who have been given access.
+
+```text
+Private Repository
+      ↓
+Authorized users only
+```
+
+If someone without permission tries to access a private repository, GitHub generally treats the resource as unavailable and may display:
+
+```text
+404
+This is not the web page you are looking for.
+```
+
+This prevents unauthorized users from confirming the contents of the private repository.
+
+---
+
+### Make Changes and Commit Using GitHub Desktop
+
+Open the project files in your preferred editor and make your changes.
+
+GitHub Desktop automatically detects modified files.
+
+The **Changes** tab will show the files that changed.
+
+Enter a commit message:
+
+```text
+add project documentation
+```
+
+Then click:
+
+```text
+Commit to main
+```
+
+After committing, upload the commit to GitHub by clicking:
+
+```text
+Push origin
+```
+
+The basic workflow becomes:
+
+```text
+Edit Files
+    ↓
+GitHub Desktop Detects Changes
+    ↓
+Write Commit Message
+    ↓
+Commit to Branch
+    ↓
+Push origin
+    ↓
+GitHub
+```
+
+---
+
+### Creating a Branch in GitHub Desktop
+
+Branches allow you to work on a feature or fix without directly changing the stable `main` branch.
+
+**Step 1:** Open your repository in GitHub Desktop.
+
+**Step 2:** At the top of GitHub Desktop, click:
+
+```text
+Current Branch
+```
+
+**Step 3:** Select the branch that should be the starting point.
+
+Usually:
+
+```text
+main
+```
+
+**Step 4:** Click:
+
+```text
+New Branch
+```
+
+**Step 5:** Enter a branch name.
+
+Example:
+
+```text
+feature/login
+```
+
+or:
+
+```text
+feature/search
+```
+
+**Step 6:** Confirm that the branch is based on the correct branch.
+
+For example:
+
+```text
+Create branch based on: main
+```
+
+**Step 7:** Click:
+
+```text
+Create Branch
+```
+
+GitHub Desktop automatically switches to the newly created branch.
+
+The structure may now look like:
+
+```text
+main
+  \
+   feature/login
+```
+
+---
+
+### Publish a Branch to GitHub
+
+A new branch created in GitHub Desktop initially exists only on your computer.
+
+To make it available on GitHub:
+
+**Step 1:** Make sure your new branch is selected.
+
+Example:
+
+```text
+feature/login
+```
+
+**Step 2:** Click:
+
+```text
+Publish branch
+```
+
+The branch is now available on GitHub.
+
+---
+
+### Understanding Pull Requests
+
+A **Pull Request (PR)** is a proposal to merge changes from one branch or fork into another branch.
+
+For example:
+
+```text
+feature/login
+      ↓
+Pull Request
+      ↓
+Review
+      ↓
+main
+```
+
+A pull request lets the repository maintainer review:
+
+- What files changed
+- What code was added or removed
+- Commit history
+- Discussions and comments
+- Automated checks
+- Possible merge conflicts
+
+A change itself is not automatically a pull request.
+
+A pull request is created when someone **proposes that their branch or fork should be merged into another branch**, usually `main`.
+
+---
+
+### Create a Pull Request Using GitHub Desktop
+
+Suppose you created:
+
+```text
+feature/login
+```
+
+and now want to merge it into:
+
+```text
+main
+```
+
+**Step 1:** Make your changes on `feature/login`.
+
+**Step 2:** Review the files in the **Changes** tab.
+
+**Step 3:** Enter a meaningful commit message.
+
+Example:
+
+```text
+add login form validation
+```
+
+**Step 4:** Click:
+
+```text
+Commit to feature/login
+```
+
+**Step 5:** Upload your branch using:
+
+```text
+Push origin
+```
+
+or, if it has never been uploaded before:
+
+```text
+Publish branch
+```
+
+**Step 6:** GitHub Desktop will provide the option:
+
+```text
+Preview Pull Request
+```
+
+Click it.
+
+**Step 7:** Confirm the base branch.
+
+For example:
+
+```text
+base: main
+```
+
+Your current branch will contain the proposed changes:
+
+```text
+feature/login → main
+```
+
+**Step 8:** Review the differences shown in GitHub Desktop.
+
+**Step 9:** Click:
+
+```text
+Create Pull Request
+```
+
+GitHub Desktop will open GitHub in your web browser.
+
+**Step 10:** Enter a meaningful pull request title.
+
+Example:
+
+```text
+Add login form validation
+```
+
+**Step 11:** Add a description explaining the changes.
+
+Example:
+
+```text
+This pull request adds validation for empty username and password fields.
+```
+
+**Step 12:** Click:
+
+```text
+Create pull request
+```
+
+Your pull request is now ready for review.
+
+---
+
+### Review and Merge a Pull Request on GitHub
+
+Before merging a pull request, review the proposed changes.
+
+**Step 1:** Open the repository on GitHub.
+
+**Step 2:** Click:
+
+```text
+Pull requests
+```
+
+**Step 3:** Open the pull request you want to review.
+
+**Step 4:** Review:
+
+```text
+Conversation
+Commits
+Checks
+Files changed
+```
+
+Pay particular attention to:
+
+```text
+Files changed
+```
+
+to understand exactly what code will be added or removed.
+
+**Step 5:** Make sure the pull request has no unresolved problems or merge conflicts.
+
+If the repository uses required reviews or automated checks, those requirements must be satisfied before merging.
+
+**Step 6:** When the changes are ready, click:
+
+```text
+Merge pull request
+```
+
+Depending on the repository configuration, GitHub may also provide:
+
+```text
+Squash and merge
+Rebase and merge
+```
+
+**Step 7:** Confirm the merge by clicking:
+
+```text
+Confirm merge
+```
+
+The changes are now part of the base branch, such as:
+
+```text
+main
+```
+
+**Step 8:** Optionally click:
+
+```text
+Delete branch
+```
+
+if the feature branch is no longer needed.
+
+The complete workflow is:
+
+```text
+Create Branch
+     ↓
+Make Changes
+     ↓
+Commit
+     ↓
+Push / Publish Branch
+     ↓
+Create Pull Request
+     ↓
+Review Changes
+     ↓
+Merge Pull Request
+     ↓
+main Updated
+```
+
+---
+
+### What is Forking?
+
+A **fork** creates your own copy of another repository under your GitHub account.
+
+The fork remains connected to the original repository, which GitHub commonly refers to as the **upstream repository**.
+
+Example:
+
+```text
+Original Repository
+github.com/original-owner/project
+              ↓
+             Fork
+              ↓
+Your Repository
+github.com/your-username/project
+```
+
+A fork allows you to:
+
+- Experiment with someone else's project without changing the original repository
+- Maintain your own version of the project
+- Create branches and commits independently
+- Contribute changes back to the original repository using a pull request
+
+---
+
+### Create a Fork on GitHub
+
+**Step 1:** Open the repository you want to fork.
+
+**Step 2:** Click:
+
+```text
+Fork
+```
+
+in the upper-right area of the repository page.
+
+**Step 3:** Select the owner for the fork.
+
+Usually this will be your personal GitHub account.
+
+**Step 4:** Keep or change the repository name.
+
+GitHub normally uses the same repository name as the original.
+
+**Step 5:** Optionally add a description.
+
+**Step 6:** Optionally enable:
+
+```text
+Copy the DEFAULT branch only
+```
+
+For many contribution workflows, copying only the default branch is enough.
+
+**Step 7:** Click:
+
+```text
+Create fork
+```
+
+GitHub creates the fork under your account.
+
+---
+
+### Clone Your Fork Using GitHub Desktop
+
+After creating the fork, download it to your computer using GitHub Desktop.
+
+**Step 1:** Open your fork on GitHub.
+
+The URL should now contain your username.
+
+Example:
+
+```text
+github.com/YOUR-USERNAME/PROJECT
+```
+
+**Step 2:** Click:
+
+```text
+Code
+```
+
+**Step 3:** Select:
+
+```text
+Open with GitHub Desktop
+```
+
+GitHub Desktop will open automatically.
+
+**Step 4:** Choose the local path where you want to store the repository.
+
+Example:
+
+```text
+Documents/GitHub/
+```
+
+**Step 5:** Click:
+
+```text
+Clone
+```
+
+Your fork now exists:
+
+```text
+Original Repository
+        ↓
+       Fork
+        ↓
+Your GitHub Account
+        ↓
+      Clone
+        ↓
+Your Computer
+```
+
+You can now create branches and make changes using GitHub Desktop.
+
+---
+
+### Contribute Back Through a Fork
+
+When contributing to a repository where you do not have direct write access, a common workflow is:
+
+```text
+Fork Original Repository
+        ↓
+Clone Your Fork
+        ↓
+Create Feature Branch
+        ↓
+Make Meaningful Changes
+        ↓
+Commit Changes
+        ↓
+Push Branch
+        ↓
+Open Pull Request
+        ↓
+Original Repository Maintainer Reviews It
+        ↓
+Merge if Approved
+```
+
+Your pull request can propose that changes from your fork be merged into the original repository.
+
+---
+
+### Do Not Open Pull Requests Blindly
+
+Do not create pull requests simply to increase activity on your GitHub profile.
+
+Before contributing:
+
+- Understand the repository and its purpose.
+- Read `README.md`.
+- Check `CONTRIBUTING.md` if available.
+- Read existing issues and pull requests.
+- Make sure your change is useful.
+- Follow the project's contribution guidelines.
+- Test your changes before submitting them.
+- Write a clear pull request title and description.
+
+Always open a pull request after making **meaningful and relevant changes**.
+
+Unnecessary pull requests can create extra work for repository maintainers.
+
+---
+
+### Understanding GitHub Stars
+
+A GitHub **Star** works similarly to bookmarking or showing appreciation for a repository.
+
+If you find a repository useful or interesting:
+
+**Step 1:** Open the repository on GitHub.
+
+**Step 2:** Click:
+
+```text
+Star
+```
+
+Starring a repository makes it easier to find later and also shows appreciation for the project.
+
+You can think of it simply as:
+
+```text
+Star ≈ Bookmark + Appreciation
+```
+
+---
+
+### Practice Workflow with a Friend
+
+A useful way to understand Git and GitHub Desktop is to practice the complete collaboration workflow with a friend.
+
+Create a simple test repository and practice:
+
+```text
+Create Repository
+      ↓
+Publish Repository
+      ↓
+Clone Repository
+      ↓
+Create Branches
+      ↓
+Make Changes
+      ↓
+Commit Changes
+      ↓
+Push Changes
+      ↓
+Pull Changes
+      ↓
+Create Pull Requests
+      ↓
+Review Each Other's Code
+      ↓
+Merge Pull Requests
+```
+
+You can also fork each other's sample repositories and practice contributing through forks.
+
+This creates a realistic workflow for understanding GitHub collaboration and helps you become more comfortable working with repositories, branches, commits, reviews, and pull requests.
+
+---
+
+### GitHub Desktop Workflow at a Glance
+
+```text
+Repository
+    ↓
+Create / Clone
+    ↓
+Create Branch
+    ↓
+Edit Files
+    ↓
+Review Changes
+    ↓
+Commit
+    ↓
+Push / Publish
+    ↓
+Pull Request
+    ↓
+Review
+    ↓
+Merge into main
+```
+
+---
+
+### Quick Reference
+
+| Action | GitHub Desktop / GitHub |
+|---|---|
+| Create repository | `File → New Repository` |
+| Publish local repository | `Publish repository` |
+| View changed files | `Changes` |
+| Save changes | `Commit to <branch>` |
+| Upload commits | `Push origin` |
+| Download remote updates | `Fetch origin` / `Pull origin` |
+| Create branch | `Current Branch → New Branch` |
+| Switch branch | `Current Branch → Select Branch` |
+| Upload new branch | `Publish branch` |
+| Create pull request | `Preview Pull Request → Create Pull Request` |
+| Merge pull request | GitHub → `Merge pull request` |
+| Fork repository | GitHub → `Fork` |
+| Clone to Desktop | GitHub → `Code → Open with GitHub Desktop` |
+| Star repository | GitHub → `Star` |
 
 ---
 
