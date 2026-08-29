@@ -3291,14 +3291,374 @@ Merge into main
 
 ## 18. Using Git in VS Code
 
-- `Ctrl+Shift+G` (Win/Linux) or `Cmd+Shift+G` (Mac) opens the **Source Control** panel.
-- Click `+` to stage a file, `-` to unstage, type a message, and hit ✓ to commit.
-- Click the sync icon to pull + push in one step.
+VS Code has built-in Git support in the Source Control panel, showing changed files, the staging area,
+and a commit box, all without leaving the editor.
 
-**Recommended extension — Git Graph:**
+---
+
+### Source Control Panel
+
+Open the Source Control panel using:
+
+**Windows / Linux**
+
+```text
+Ctrl + Shift + G
 ```
-Extensions → search "Git Graph" → Install
-Ctrl+Shift+P → "Git Graph: View Git Graph"
+
+**macOS**
+
+```text
+Cmd + Shift + G
+```
+
+The Source Control panel shows:
+
+- Changed files
+- Staged changes
+- Unstaged changes
+- Commit message box
+- Repository actions
+
+---
+
+### Staging Changes
+
+Files you modify appear under the **Changes** section.
+
+**1. Stage one file**
+
+Click the `+` icon next to a changed file.
+
+Terminal equivalent:
+
+```bash
+git add filename.py
+```
+
+**2. Stage all changes**
+
+Click the `+` icon next to **Changes**.
+
+Terminal equivalent:
+
+```bash
+git add .
+```
+
+**3. Unstage a file**
+
+Under **Staged Changes**, click the `-` icon next to the file.
+
+Every action in the Source Control interface maps to Git commands underneath.
+
+---
+
+### Creating Commits
+
+After staging your changes:
+
+**Step 1:** Type a commit message in the message box at the top of the Source Control panel.
+
+Example:
+
+```text
+add user authentication
+```
+
+**Step 2:** Click the **Commit** checkmark button.
+
+Terminal equivalent:
+
+```bash
+git commit -m "add user authentication"
+```
+
+---
+
+### Synchronizing Changes
+
+VS Code can synchronize your local and remote repository using the **Sync Changes** button or circular arrows icon.
+
+Click:
+
+```text
+Sync Changes
+```
+
+This synchronizes remote and local changes by pulling incoming changes and pushing your outgoing commits.
+
+Terminal equivalent:
+
+```bash
+git pull origin main
+git push origin main
+```
+
+---
+
+### Viewing File Differences
+
+Click any modified file inside the **Source Control** panel.
+
+VS Code opens a diff editor that lets you compare the previous version with your current changes.
+
+Terminal equivalents:
+
+```bash
+# view unstaged changes
+git diff
+
+# view staged changes
+git diff --staged
+```
+
+This makes it easier to review exactly what was added, removed, or modified before committing.
+
+---
+
+### Timeline View
+
+VS Code provides a **Timeline** view for examining the history of a file.
+
+To view it:
+
+1. Open the file in VS Code.
+2. Open the **Explorer** panel.
+3. Find the **Timeline** section for the file.
+4. Review its previous commits and changes.
+
+You can also right-click a file and use the available timeline/history options.
+
+Terminal equivalent:
+
+```bash
+git log --oneline -- filename.py
+```
+
+This displays commits that affected that specific file.
+
+---
+
+### Managing Branches
+
+Your current Git branch appears in the bottom-left area of the VS Code status bar.
+
+Click the branch name to create or switch branches.
+
+#### Create a New Branch
+
+Click the current branch name and select:
+
+```text
+Create new branch...
+```
+
+Enter a branch name such as:
+
+```text
+feature/new-branch
+```
+
+Terminal equivalent:
+
+```bash
+git switch -c feature/new-branch
+```
+
+#### Switch to Another Branch
+
+Click the branch name and select the branch you want.
+
+For example:
+
+```text
+main
+```
+
+Terminal equivalent:
+
+```bash
+git switch main
+```
+
+---
+
+### Merge Conflict Resolution
+
+When Git detects a merge conflict, VS Code highlights the conflicting sections directly inside the editor.
+
+A conflict may look like:
+
+```text
+<<<<<<< HEAD
+your current code
+=======
+incoming code
+>>>>>>> feature/search
+```
+
+VS Code provides actions for resolving the conflict.
+
+**Accept Current / Keep Mine**
+
+Keeps the version from your current branch.
+
+```text
+Current Version
+```
+
+**Accept Incoming / Keep Theirs**
+
+Keeps the incoming version from the branch being merged.
+
+```text
+Incoming Version
+```
+
+**Accept Both / Keep Both**
+
+Keeps both versions in the file.
+
+```text
+Current Version
+Incoming Version
+```
+
+After resolving the conflict, stage the file and commit the resolution.
+
+```bash
+git add filename.py
+git commit -m "resolve merge conflict"
+```
+
+---
+
+### Publishing a Repository to GitHub
+
+If you have created a local Git repository that is not yet hosted on GitHub, VS Code can publish it directly.
+
+**Step 1:** Open the project in VS Code.
+
+**Step 2:** Open **Source Control**.
+
+```text
+Ctrl + Shift + G
+```
+
+or on macOS:
+
+```text
+Cmd + Shift + G
+```
+
+**Step 3:** If required, initialize the repository by clicking:
+
+```text
+Initialize Repository
+```
+
+**Step 4:** Create and commit your project files.
+
+**Step 5:** Click:
+
+```text
+Publish to GitHub
+```
+
+**Step 6:** Sign in to GitHub if VS Code asks you to authenticate.
+
+**Step 7:** Choose whether the repository should be:
+
+```text
+Public
+```
+
+or:
+
+```text
+Private
+```
+
+**Step 8:** Select the files you want to include.
+
+VS Code then creates the GitHub repository and publishes your local commits.
+
+The equivalent Git workflow includes commands such as:
+
+```bash
+git remote add origin https://github.com/username/repo.git
+git push -u origin main
+```
+
+---
+
+### Git Graph Extension
+
+For a visual representation of branches, commits, and merges, you can install the **Git Graph** extension.
+
+Open Extensions:
+
+```text
+Ctrl + Shift + X
+```
+
+Then search for:
+
+```text
+Git Graph
+```
+
+Click:
+
+```text
+Install
+```
+
+After installation, open the Command Palette:
+
+```text
+Ctrl + Shift + P
+```
+
+Search for:
+
+```text
+Git Graph: View Git Graph
+```
+
+Select it to open the visual Git history.
+
+A Git graph helps you visualize:
+
+```text
+      C─D
+     /   \
+A─B─E─────M
+```
+
+This makes branch creation, commits, merges, and repository history easier to understand.
+
+---
+
+### VS Code Git Workflow at a Glance
+
+```text
+Edit Files
+    ↓
+Source Control
+    ↓
+Review Changes
+    ↓
+Stage (+)
+    ↓
+Write Commit Message
+    ↓
+Commit (✓)
+    ↓
+Sync / Push
+    ↓
+GitHub
 ```
 
 ---
