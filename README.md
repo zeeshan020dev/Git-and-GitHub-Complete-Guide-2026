@@ -1823,6 +1823,8 @@ This stops the current rebase and returns your branch to the state it was in bef
 
 Rebase rewrites commit history, so changing commits that other developers are already using can cause synchronization problems.
 
+Click here 👉 [Table of Contents](#-table-of-contents) to return back to the **Table of Contents.**
+
 ---
 
 ## 16. Using GitHub to Host Our Repositories
