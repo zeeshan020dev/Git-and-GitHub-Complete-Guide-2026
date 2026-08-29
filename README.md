@@ -3855,12 +3855,116 @@ Then open a pull request on GitHub.
 
 ## 21. Conclusion
 
-### ✅ Best Practices
-- **Present tense commit messages** — `"Fix login bug"`, not `"Fixed login bug"`
-- **Meaningful messages** — describe *what* and *why*, not "fixed stuff"
-- **Short-lived branches** — merge back to main as soon as it's ready
-- **Never push secrets** — no passwords, `.env` files, or API keys (once leaked, rotate them immediately)
-- **Always review before committing** — `git status` and `git diff` catch mistakes early
+### ✅ Git Best Practices
+
+Good Git habits make your project history easier to understand, review, and roll back.
+
+#### Core Commit Habits
+
+- **Commit frequently** — small commits are easier to review and undo.
+- **Keep commits small** — one logical change per commit.
+- **Use clear present-tense messages** — describe exactly what changed.
+
+```bash
+git commit -m "add email field to form"
+git commit -m "fix null check in user parser"
+git commit -m "add dark mode toggle to settings"
+````
+
+---
+
+#### One Feature Per Branch
+
+Keep each feature isolated in its own branch.
+
+```bash
+git switch -c feature/dark-mode
+```
+
+Work only on that feature inside the branch, then merge it when it is ready.
+
+---
+
+#### Pull Before Push
+
+Sync with the remote repository before pushing your changes.
+
+```bash
+git pull origin main
+git push origin main
+```
+
+This helps reduce unnecessary conflicts.
+
+---
+
+#### Never Commit Secrets
+
+Never commit:
+
+* API keys
+* Passwords
+* `.env` files
+* Other private credentials
+
+If `.env` is already tracked:
+
+```bash
+git rm --cached .env
+echo ".env" >> .gitignore
+git commit -m "remove env file from tracking"
+```
+
+> If a secret was ever committed, rotate or replace it immediately. Removing it from Git does not undo the exposure.
+
+---
+
+#### Use `.gitignore`
+
+Create `.gitignore` early so unwanted files are never tracked.
+
+```bash
+echo ".env" >> .gitignore
+echo "__pycache__/" >> .gitignore
+echo ".DS_Store" >> .gitignore
+
+git add .gitignore
+git commit -m "add gitignore"
+```
+
+---
+
+#### Review Before Every Commit
+
+Always review your changes before saving them to Git history.
+
+```bash
+# check what changed
+git status
+
+# review unstaged changes
+git diff
+
+# review staged changes
+git diff --staged
+
+# commit with a clear message
+git commit -m "your message"
+```
+
+---
+
+#### Quick Reference
+
+| Command                | What It Does                                         |
+| ---------------------- | ---------------------------------------------------- |
+| `git status`           | Shows what has changed before staging or committing. |
+| `git diff`             | Reviews unstaged changes.                            |
+| `git diff --staged`    | Reviews exactly what the next commit will contain.   |
+| `git rm --cached file` | Stops tracking a file without deleting it locally.   |
+| `git switch -c name`   | Creates and switches to a new feature branch.        |
+
+---
 
 ### ⚡ Quick Reference Cheat Sheet
 
