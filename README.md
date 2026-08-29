@@ -4086,8 +4086,6 @@ The real skill comes from practice. Use Git on every project, even small ones. C
 
 ## Author ✍️
 
-**[Muhammad Zeeshan Islam](https://github.com/zeeshan020dev)**
-
 <table>
   <tbody>
     <tr>
@@ -4097,9 +4095,7 @@ The real skill comes from practice. Use Git on every project, even small ones. C
           <br />
           <sub><b>Muhammad Zeeshan Islam</b></sub>
         </a>
-        <br />
-        <sub>Main Author</sub>
-        <br />
+          <br>
         <a href="https://github.com/zeeshan020dev" title="GitHub Profile">💻</a>
         <a href="https://github.com/zeeshan020dev" title="Documentation">📖</a>
       </td>
