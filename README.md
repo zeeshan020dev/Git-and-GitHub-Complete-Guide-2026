@@ -29,7 +29,7 @@
 14. [Git Tags](#14-git-tags)
 15. [Git Rebase](#15-git-rebase)
 16. [Using GitHub to Host Our Repositories](#16-using-github-to-host-our-repositories)
-17. [GitHub Desktop](#17-github-desktop)
+17. [GitHub Desktop: GUI for Git and GitHub](#17-github-desktop-gui-for-git-and-github)
 18. [Using Git in VS Code](#18-using-git-in-vs-code)
 19. [Git Scenario 2: Multi-User Setup](#19-git-scenario-2-multi-user-setup)
 20. [Modern Workflow](#20-modern-workflow)
