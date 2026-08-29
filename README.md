@@ -142,6 +142,12 @@ flowchart LR
     --> E["🌍 GitHub Repository"]
 ```
 
+<div align="left">
+
+📑 **[Click here to return to the Table of Contents](#table-of-contents) for a quick refresher.**
+
+</div>
+
 ---
 
 ## 3. Understanding Version Control Systems
