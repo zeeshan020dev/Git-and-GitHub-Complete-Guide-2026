@@ -3966,23 +3966,113 @@ git commit -m "your message"
 
 ---
 
-### ⚡ Quick Reference Cheat Sheet
+### ⚡ Git Cheat Sheet
 
-| Command | What it does |
+Quick reference for common Git commands you will use again and again.
+
+#### Repository Commands
+
+| Command | What It Does |
 |---|---|
-| `git init` | Start a new repository |
-| `git clone <url>` | Copy a remote repository |
-| `git status` | Check current state |
-| `git add .` | Stage all changes |
-| `git commit -m "msg"` | Save a snapshot |
-| `git log --oneline` | Compact commit history |
-| `git branch -a` | List all branches |
-| `git switch -c <name>` | Create + switch to a branch |
-| `git merge <branch>` | Merge a branch into current |
-| `git stash` / `git stash pop` | Park & restore uncommitted work |
-| `git push` / `git pull` | Sync with GitHub |
-| `git reset --hard HEAD~1` | Undo last commit (⚠️ discards changes) |
-| `git revert <commit>` | Safely undo a **pushed** commit |
+| `git init` | Starts a new Git repository. |
+| `git clone <url>` | Copies a remote repository to your computer. |
+| `git status` | Shows the current repository state. |
+| `git status -s` | Shows a short, compact status. |
+
+---
+
+#### Tracking & Commit Commands
+
+| Command | What It Does |
+|---|---|
+| `git add <file>` | Stages one file. |
+| `git add .` | Stages all changes. |
+| `git add -p` | Stages changes interactively, hunk by hunk. |
+| `git commit -m "msg"` | Saves staged changes as a commit. |
+| `git commit -am "msg"` | Stages tracked files and commits them in one step. |
+
+---
+
+#### Branch Commands
+
+| Command | What It Does |
+|---|---|
+| `git branch` | Lists local branches. |
+| `git branch -a` | Lists local and remote branches. |
+| `git switch <branch>` | Switches to an existing branch. |
+| `git switch -c <branch>` | Creates and switches to a new branch. |
+| `git merge <branch>` | Merges a branch into the current branch. |
+| `git branch -d <branch>` | Deletes a local branch. |
+
+---
+
+#### Remote Commands
+
+| Command | What It Does |
+|---|---|
+| `git remote -v` | Shows connected remote repositories. |
+| `git remote add origin <url>` | Connects your local repo to GitHub. |
+| `git push -u origin main` | First push and sets the upstream branch. |
+| `git push` | Pushes commits to the tracked remote branch. |
+| `git pull origin main` | Downloads and merges remote changes. |
+| `git fetch origin` | Downloads remote changes without merging them. |
+
+---
+
+#### History & Review Commands
+
+| Command | What It Does |
+|---|---|
+| `git log` | Shows full commit history. |
+| `git log --oneline` | Shows compact commit history. |
+| `git log --oneline --graph --all` | Shows a visual graph of all branches. |
+| `git show <commit>` | Shows details of a specific commit. |
+| `git diff` | Shows unstaged changes. |
+| `git diff --staged` | Shows staged changes. |
+
+> Use `git fetch` when you want to review remote changes before merging. `git pull` downloads and integrates them in one step.
+
+---
+
+#### Undo & Stash Commands
+
+| Command | What It Does |
+|---|---|
+| `git restore <file>` | Discards unstaged changes in a file. |
+| `git restore --staged <file>` | Unstages a file but keeps its changes. |
+| `git reset --soft HEAD~1` | Undoes the last commit but keeps changes staged. |
+| `git reset --hard HEAD~1` | Undoes the last commit and discards its changes. |
+| `git revert <commit>` | Safely creates a new commit that undoes an earlier commit. |
+| `git stash` | Temporarily saves uncommitted work. |
+| `git stash pop` | Restores the latest stashed work. |
+
+> Prefer `git revert` instead of `git reset --hard` when a commit has already been pushed and shared with others.
+
+---
+
+#### Quick Workflow
+
+```bash
+# get the latest changes
+git pull origin main
+
+# create a feature branch
+git switch -c feature/my-feature
+
+# edit files
+
+# stage changes
+git add .
+
+# commit changes
+git commit -m "add my feature"
+
+# publish the branch
+git push -u origin feature/my-feature
+
+# open a pull request on GitHub
+
+```
 
 ---
 
